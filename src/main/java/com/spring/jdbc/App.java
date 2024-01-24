@@ -2,6 +2,7 @@ package com.spring.jdbc;
 
 import java.util.List;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
@@ -16,7 +17,10 @@ public class App
     {
         System.out.println("My program started...");
         //Spring jdbc=>JdbcTemplate
-        ApplicationContext context=new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+        //ApplicationContext context=new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+        ApplicationContext context=new AnnotationConfigApplicationContext(JdbcConfig.class);
+        
+        
         /*JdbcTemplate template = context.getBean("jdbcTemplate", JdbcTemplate.class);
         //insert query
         String query="insert into student(id, name, city) values(?,?,?)";
