@@ -1,5 +1,6 @@
 package com.spring.jdbc;
 
+import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.spring.jdbc.dao.StudentDao;
@@ -45,7 +46,13 @@ public class App
         System.out.println("deleted "+result);*/
         
         //GET Single Student
-        Student student = studentDao.getStudent(222);
-        System.out.println(student);
+        /*Student student = studentDao.getStudent(222);
+        System.out.println(student);*/
+        
+        //GET all Student
+        List<Student> students = studentDao.getAllStudents();
+        for(Student s: students) {
+        	System.out.println(s);
+        }
     }
 }
