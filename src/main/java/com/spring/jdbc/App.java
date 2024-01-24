@@ -24,13 +24,18 @@ public class App
         int result = template.update(query, 457, "Nityanand", "Gorakhpur");*/
 
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
-        Student student =new Student();
+        /*Student student =new Student();
         student.setId(630);
         student.setName("Pankaj Kr Singh");
         student.setCity("Delhi");
-        
         int result= studentDao.insert(student);
-        System.out.println("student added: "+result);
-
+        System.out.println("student added: "+result);*/
+        
+        Student student =new Student();
+        student.setId(630);
+        student.setName("Rakesh Pandey");
+        student.setCity("Lucknow");
+        int result = studentDao.change(student);
+        System.out.println("data changed: "+result);
     }
 }
