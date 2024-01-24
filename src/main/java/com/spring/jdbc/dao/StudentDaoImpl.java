@@ -20,6 +20,13 @@ public class StudentDaoImpl implements StudentDao {
 		return r;
 	}
 
+	public int delete(int studentId) {
+		// delete operation
+		String query="delete from student where id=?";
+		int r = jdbcTemplate.update(query, studentId);
+		return r;
+	}
+	
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}

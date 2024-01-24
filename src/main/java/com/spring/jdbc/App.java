@@ -24,6 +24,7 @@ public class App
         int result = template.update(query, 457, "Nityanand", "Gorakhpur");*/
 
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+        //INSERT
         /*Student student =new Student();
         student.setId(630);
         student.setName("Pankaj Kr Singh");
@@ -31,11 +32,16 @@ public class App
         int result= studentDao.insert(student);
         System.out.println("student added: "+result);*/
         
-        Student student =new Student();
+        //UPDATE
+        /*Student student =new Student();
         student.setId(630);
         student.setName("Rakesh Pandey");
         student.setCity("Lucknow");
         int result = studentDao.change(student);
-        System.out.println("data changed: "+result);
+        System.out.println("data changed: "+result);*/
+        
+        //DELETE
+        int result = studentDao.delete(630);
+        System.out.println("deleted "+result);
     }
 }
