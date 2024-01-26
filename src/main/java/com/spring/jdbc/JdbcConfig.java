@@ -12,7 +12,7 @@ import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.dao.StudentDaoImpl;
 
 @Configuration
-@ComponentScan(basePackages = {"com.spring.jdbc.dao"})
+@ComponentScan(basePackages = {"com.spring.jdbc.dao"})//
 public class JdbcConfig {
 	
 	@Bean("ds")
@@ -32,10 +32,10 @@ public class JdbcConfig {
 		return jdbcTemplate;
 	}
 	
-	@Bean(name= {"studentDao"})
+	/*@Bean(name= {"studentDao"})
 	public StudentDao getStudentDao() {
 		StudentDaoImpl studentDao = new StudentDaoImpl();
 		studentDao.setJdbcTemplate(getTemplate());
 		return studentDao;
-	}
+	}*/
 }
